@@ -10,21 +10,18 @@ namespace Weather_Bot.Dialogs
     {
         public Task StartAsync(IDialogContext context)
         {
+            Functions.Weather_api.WeatherHandler.CreateConnection();
             context.Wait(MessageReceivedAsync);
-
             return Task.CompletedTask;
         }
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-
-            // calculate something for us to return
-            int length = (activity.Text ?? string.Empty).Length;
-
-            // return our reply to the user
-            await context.PostAsync($"You sent {activity.Text} which was {length} characters");
-
+            var city = activity.Text.ToString();
+            await Functions.Weather_api.WeatherHandler.GetWeatherDataAsync(city);
+            string res = Functions.Weather_api.WeatherHandler.GenerateResponse();
+            await context.PostAsync(res);
             context.Wait(MessageReceivedAsync);
         }
     }
