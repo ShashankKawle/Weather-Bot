@@ -15,8 +15,6 @@ namespace Weather_Bot.Functions.Weather_api
         {
             //Setting up the client.
             client.BaseAddress = new Uri("http://api.openweathermap.org/data/2.5/weather");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         internal static async Task GetWeatherDataAsync(string city)
