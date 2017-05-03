@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace Weather_Bot.Functions.Weather_api
 {
@@ -14,7 +11,6 @@ namespace Weather_Bot.Functions.Weather_api
         static HttpClient client = new HttpClient();
         static WeatherData jsd;
 
-        // Incomplete Function     [ UNDER DEVELOPMENT ]
         internal static void CreateConnection()
         {
             //Setting up the client.

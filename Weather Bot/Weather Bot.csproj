@@ -113,6 +113,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
+    <Compile Include="Functions\Weather api\LUISData.cs" />
+    <Compile Include="Functions\Weather api\LUISHandler.cs" />
     <Compile Include="Functions\Weather api\WeatherData.cs" />
     <Compile Include="Functions\Weather api\WeatherHandler.cs" />
     <Compile Include="Global.asax.cs">
