@@ -31,7 +31,7 @@ namespace Weather_Bot.Functions.Weather_api
 
         internal static String GenerateResponse()
         {
-            String response = "Name = " + jsd.name + "\n Latitude = " + jsd.coord.lat + "\tLongitude = " + jsd.coord.lon;
+            String response = "Name = " + jsd.name + "\n Tempreture = " + jsd.main.temp + "\tPressure = " + jsd.main.pressure + "\tHumidity = " + jsd.main.humidity; ;
             return response;
         }
     }
