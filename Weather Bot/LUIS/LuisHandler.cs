@@ -11,7 +11,7 @@ using Weather_Bot.Functions.Weather;
 namespace Weather_Bot.LUIS
 {
 
-    [LuisModel("c5782777-be74-4e47-a40d-eefee342b7f3", "8eb9bdfa3cdd47efa9361cd4e1ea1c0b")]
+    [LuisModel("LUIS App ID", "Subscription-key")]
     [Serializable]
     public class LuisHandler : LuisDialog<object>
     {

@@ -22,7 +22,7 @@ namespace Weather_Bot.Functions.Weather
 
         internal static async Task GetWeatherDataAsync(string city)
         {
-            string key = "022e08de60c87cfa277a2f2af769b9f1";
+            string key = "Your weather api key";
 
             //Sending the request and getting Response.
             HttpResponseMessage response = await client.GetAsync("?q=" + city + "&APPID=" + key);

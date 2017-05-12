@@ -19,7 +19,6 @@ namespace Component_Testing_Bot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
                 await Conversation.SendAsync(activity, () => new Weather_Bot.LUIS.LuisHandler());
             }
             else
