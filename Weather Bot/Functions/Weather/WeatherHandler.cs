@@ -1,26 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web;
 
-namespace Weather_Bot.Functions.Weather_api
+namespace Weather_Bot.Functions.Weather
 {
     public class WeatherHandler
     {
-        static HttpClient client = new HttpClient();
+        static HttpClient client;
         static WeatherData jsd;
 
         internal static void CreateConnection()
         {
             //Setting up the client.
+            client = new HttpClient();
             client.BaseAddress = new Uri("http://api.openweathermap.org/data/2.5/weather");
         }
 
         internal static async Task GetWeatherDataAsync(string city)
         {
             string key = "022e08de60c87cfa277a2f2af769b9f1";
-            
+
             //Sending the request and getting Response.
             HttpResponseMessage response = await client.GetAsync("?q=" + city + "&APPID=" + key);
             if (response.StatusCode == HttpStatusCode.OK)

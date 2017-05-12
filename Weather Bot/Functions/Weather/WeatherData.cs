@@ -1,4 +1,4 @@
-﻿namespace Weather_Bot.Functions.Weather_api
+﻿namespace Weather_Bot.Functions.Weather
 {
     public class WeatherData
     {

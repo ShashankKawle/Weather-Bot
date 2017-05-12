@@ -1,13 +1,12 @@
-﻿using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Connector;
-using System;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Weather_Bot.Dialogs;
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Connector;
+using System;
 
-namespace Weather_Bot
+namespace Component_Testing_Bot
 {
     [BotAuthentication]
     public class MessagesController : ApiController
@@ -20,7 +19,8 @@ namespace Weather_Bot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new RootDialog());
+                //var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                await Conversation.SendAsync(activity, () => new Weather_Bot.LUIS.LuisHandler());
             }
             else
             {

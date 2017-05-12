@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Weather_Bot.Functions.Weather_api
+﻿namespace Weather_Bot.LUIS
 {
     public class Rootobject
     {
@@ -33,6 +28,4 @@ namespace Weather_Bot.Functions.Weather_api
         public int endIndex { get; set; }
         public float score { get; set; }
     }
-
-
 }
